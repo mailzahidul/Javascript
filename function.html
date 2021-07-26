@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+<h1>Java Scripts<h1/>
+
+<script>
+// 1. A function can store in a variable.
+	function sayName(name){
+		console.log(name);
+	}
+	
+	var hello = sayName;
+	hello('mina')
+	console.log(typeof hello)
+	
+// 2. A function can be stored in an array.
+	var arr = [1,2,3,4,5]
+	arr.push(hello)
+	console.log(arr)
+	
+// 3. A function can be stored in an object.
+	var obj = {
+		name : "Zahidul Islam",
+		mobile : 01919100108,
+		address : "Dhaka",
+		func: hello('df')
+	}
+	console.log(obj)
+	
+// 4. We can call function as nedeed.
+	var sum = 10 + (function(){return 20})();
+	console.log(sum + " Sum")
+	
+	
+// 5. We can pass function as an argument
+
+	function wow(name, fun){
+		return fun(name);
+	}
+	var result = wow("hi", sayName)
+	result
+
+// 6. we can return function from another function
+	
+	function base(b){
+		return function(n){
+			var result =1;
+			for(var i=0; i<b; i++){
+			result*=n;
+			}
+			return result;
+		}
+	}
+	
+	var power = base(2);
+	var res = power(5);
+	res;
+	
+
+
+</script>
+
+</body>
+</html>
